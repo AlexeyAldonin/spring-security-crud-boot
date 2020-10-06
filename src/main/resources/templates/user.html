@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.springframework.org/security/tags">
+<head>
+    <meta charset="UTF-8">
+    <title>User Page</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 300px;
+        }
+        table, td, th {
+            border: 1px solid black;
+        }
+        th {
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <a th:href="@{/logout}"> Logout </a><br>
+    <a th:href="@{/admin}"> To All Users(ADMIN access only) </a>
+</div>
+<h1>User Details</h1>
+<!--/*@thymesVar id="user" type="app.model.User"*/-->
+<table th:object="${user}">
+    <tr>
+        <th>User ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>User Roles</th>
+    </tr>
+    <tr>
+    <tr>
+        <td th:utext="${user.id}"></td>
+        <td th:utext="${user.username}"></td>
+        <td th:utext="${user.age}"></td>
+        <td th:utext="${user.roles}"></td>
+    </tr>
+    </tr>
+</table>
+
+</body>
+</html>
