@@ -61,6 +61,7 @@ public class AdminController {
         model.addAttribute("user", user);
         Set<Role> all = roleService.getAll();
         model.addAttribute("allRoles", all);
+        //
         return "update_user";
     }
 
